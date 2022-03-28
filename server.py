@@ -9,10 +9,9 @@ app = Flask(__name__)
 def root():
     return render_template("index.html")
 
-#Ceļš uz about
-@app.route('/about',methods = ['POST', 'GET'])
+@app.route('/about')
 def about():
-    return render_template("about.html")
+  return render_template("about.html")
 
 #Ceļš uz test
 @app.route('/test',methods = ['POST', 'GET'])
