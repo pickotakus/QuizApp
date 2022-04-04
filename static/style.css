@@ -1,3 +1,395 @@
-h1{
-    color:darkred;
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600');
+body, html
+{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+::selection
+{
+    background: #20add84c;
+}
+*
+{
+    transition: all 0.3s ease;
+    font-family: 'Roboto';
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+.body-container
+{
+/*    padding-top: 72px;*/
+}
+/* Navigation Tools */
+.sd-navbar-top
+{
+    height: 72px;
+    width: 100%;
+    overflow: auto;
+    overflow-y: hidden;
+    z-index: 10000;
+    box-shadow: 0px 2px 10px #999;
+    background: #eee;
+}
+.sd-navbar-fixed
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.sd-navbar-logo
+{
+    display: inline-block;
+    height: 72px;
+    width: 72px;
+    background-image: url(favicon.png);
+    background-size: cover;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.demo_navbar-brand
+{
+    display: inline-block;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 1.6em;
+    user-select: none;
+    vertical-align: middle;
+    text-transform: uppercase;
+    background-image: url(sdBrand.png);
+    background-size: cover;
+    height: 72px;
+    width: 200px;
+}
+/* Navigation Buttons! */
+.navigation-fab-top
+{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 50px;
+    box-shadow: 0px 2px 5px #333;
+    background: #d3d3d3;
+    color: #333;
+    border-radius: 50%;
+    border: none;
+    background: #333;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    left: calc(50% - (75px / 2));
+}
+.navigation-fab-top:hover
+{
+    filter: brightness(104%);
+    box-shadow: 0px 2px 5px #000;
+}
+.navigation-fab-top.download:active,.navigation-fab-top.download:focus
+{
+        box-shadow: 0px 2px 5px #000;
+}
+.navigation-fab-top.download
+{
+    background-image: url('download.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sd-navbar-search-input
+{
+    height: 52px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: calc(40% - 10px);
+    background: #00000022;
+    color: #333;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    padding: 0px 50px;
+    margin-right: 10px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+}
+.sd-navbar-search-input::-webkit-input-placeholder
+{
+    color: #333;
+}
+.sd-navbar-search-input:focus
+{
+    background: #fff;
+    color: #333;
+    box-shadow: 0px 2px 5px #999;
+}
+.sd-navbar-search-input:focus::-webkit-input-placeholder
+{
+    color: #666;
+}
+.sd-navbar-search-button
+{
+    height: 52px;
+    width: 50px;
+    background: #eeeeee00;
+    position: fixed;
+    top: 10px;
+    left: 200px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    color: #333;
+}
+.sd-navbar-clear-button
+{
+    height: 52px;
+    width: 50px;
+    background: #eeeeee00;
+    position: fixed;
+    top: 10px;
+    left: 200px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    color: #333;
+}
+.tooltip
+{
+    border-radius: 5px;
+    position: fixed;
+    background: rgba(50, 50, 50, 0.6);
+    color: #ffffff;
+    position: fixed;
+    text-align: center;
+    padding: 8px 16px;
+    transition: all 0.3s ease, left 0.0s linear, top 0.0s linear;
+    user-select: none;
+    z-index: 11000;
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+}
+/* Headers and Sections */
+.sd-section-header
+{
+    width: calc(100% - 32px);
+    height: 272px;
+    box-shadow: 0px 5px 10px #999;
+    background-image: url('https://newevolutiondesigns.com/images/freebies/google-material-design-wallpaper-2.jpg');
+    background-size: cover;
+    color: #fff;
+  background-attachment: fixed;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease, background-position 0.0s linear;
+    line-height: 480px;
+    user-select: none;
+    text-shadow: 2px 2px 5px #333;
+    padding: 0px 16px;
+    font-size: 3em;
+}
+.sd-section
+{
+    width: calc(100% - 16px);
+    min-height: calc(20vh - 16px);
+    box-shadow: 0px 2px 10px #aaa;
+    padding: 8px;
+}
+/* Buttons */
+.sd-button
+{
+    height: 40px;
+    padding: 0px 8px;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background: transparent;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.sd-button:hover
+{
+    background: #33333333;
+}
+.sd-button:active
+{
+    box-shadow: 0px 2px 5px #bbb;
+}
+.sd-button.sd-primary
+{
+    color: #2c67e3;
+}
+.sd-button.sd-accent
+{
+    color: #ff69b4;
+}
+.sd-button.sd-warning
+{
+    color: #ffa500;
+}
+.sd-button.sd-error
+{
+    color: #da1212;
+}
+.sd-button.sd-primary:hover
+{
+    background: #2c67e344;
+}
+.sd-button.sd-accent:hover
+{
+    background: #ff69b444;
+}
+.sd-button.sd-warning:hover
+{
+    background: #ffa50033;
+}
+.sd-button.sd-error:hover
+{
+    background: #da121244;
+}
+.sd-button.sd-raised
+{
+    background: #00000011;
+    box-shadow: 0px 2px 5px #bbb;
+}
+.sd-button.sd-accent.sd-raised
+{
+    background: #ff69b4;
+    color: #fff;
+}
+.sd-button.sd-primary.sd-raised
+{
+    background: #2c67e3;
+    color: #fff;
+}
+.sd-button.sd-warning.sd-raised
+{
+    background: #ffa500;
+    color: #fff;
+}
+.sd-button.sd-error.sd-raised
+{
+    background: #da1212;
+    color: #fff;
+}
+.sd-button.sd-primary:active
+{
+    box-shadow: 0px 3px 5px #2c67e333;
+}
+.sd-button.sd-accent:active
+{
+    box-shadow: 0px 3px 5px #ff69b433;
+}
+.sd-button.sd-warning:active
+{
+    box-shadow: 0px 3px 5px #ffa50033;
+}
+.sd-button.sd-error:active
+{
+    box-shadow: 0px 3px 5px #da121233;
+}
+.sd-button.sd-raised:active
+{
+    box-shadow: 0px 2px 10px #99999999;
+}
+.sd-button.sd-raised.sd-primary:active
+{
+    box-shadow: 0px 2px 10px #2c67e399;
+}
+.sd-button.sd-raised.sd-accent:active
+{
+    box-shadow: 0px 2px 10px #ff69b499;
+}
+.sd-button.sd-raised.sd-warning:active
+{
+    box-shadow: 0px 2px 10px #ffa50099;
+}
+.sd-button.sd-raised.sd-error:active
+{
+    box-shadow: 0px 2px 10px #da121299;
+}
+.sd-fab
+{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.ripple
+{
+    background: rgba(0, 0, 0, 0.21);
+    position: absolute;
+    border-radius: 50%;
+    transition: all 0.4s ease-out;
+    transform: scale(0);
+}
+.sd-primary .ripple
+{
+    background: #2c67e349;
+}
+.sd-accent .ripple
+{
+    background: #ff69b444;
+}
+.sd-warning .ripple
+{
+    background: #ffa50049;
+}
+.sd-error .ripple
+{
+    background: #da121249;
+}
+.sd-raised .ripple
+{
+    background: #00000049;
+}
+.sd-raised.sd-primary .ripple,.sd-raised.sd-accent .ripple, .sd-raised.sd-warning .ripple, .sd-raised.sd-error .ripple
+{
+    background: #ffffff49;
+}
+.navigation-fab-top .ripple
+{
+    background: #ffffff49;
+}
+.sd-button-lg
+{
+    height: 50px;
+    padding: 0px 12px;
+}
+.sd-button-lg.sd-fab
+{
+    height: 72px;
+    width: 72px;
+}
+.sd-section-header .sd-button
+{
+    float: right;
+    margin-top: calc(272px - 50px - 10px);
+    margin-right: 20px;
+}
+.sd-no-shadow
+{
+    box-shadow: none!important;
+}
+.sd-button-sm
+{
+    height: 40px!important;
+    padding: 0px 4px;
+}
+/* Just to add a little bit of modern look */
+.page-fold
+{
+    height: 0;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 0px solid transparent;
+    border-top: 70px solid #eee;
+    position: fixed;
+    right: 0;
+    top: 72px;
+    z-index: 10001;
 }
