@@ -30,7 +30,7 @@ def about():
 
 @app.route('/test',methods = ['POST', 'GET'])
 def test():
-    parametri = ["IQ","Augums","Kāja"]
+    parametri = ["IQ","Augums","Māja"]
     images = loadAllPictures()
     return render_template("test.html",parametri=parametri,images=images)
 
