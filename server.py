@@ -33,6 +33,11 @@ def root():
     else:
       return render_template("indexEN.html")
 
+#testējam karti ar atkritumu šķirošanas vietām
+@app.route('/map')
+def map():
+  return render_template("mapSHP.html")
+  
 @app.route('/about')
 def about():
   language = request.cookies.get('language')
