@@ -25,10 +25,12 @@ def root():
   if not request.cookies.get('language'):
     res = make_response('Set language')
     res.set_cookie('language', 'latvian')
+    print('latvian')
     return render_template("indexLV.html")
   else:
     res = make_response('Set language')
     res.set_cookie('language', 'english')
+    print('english')
     return render_template("indexEN.html")
 
 @app.route('/about')
