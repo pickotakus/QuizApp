@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Quiz Aplikācija! </title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Šodien taisīsim testu!</h1>
+        <div class="sd-navbar-top">
+            <p>Šis tests it ļoti svarīgs.</p>
+        </div>
+        <h2 class="sd-section-header">Autors - Sandra Trošina.</h2>
+        <a href="{{ url_for('indexEN.html'), 'language'='english' }}"><button>Change language</button></a>
+        <a href="#">LATVIAN</a> <br>
+        <a href="#">ENGLISH</a>
+    </body>
+</html>

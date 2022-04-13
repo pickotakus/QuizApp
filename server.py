@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import request
-from flask import render_template
+from flask import render_template, make_response
 
 app = Flask(__name__)
 
@@ -22,7 +22,10 @@ def loadAllPictures():
 #Pirmā lapa, kas tiks ielādēta
 @app.route('/',methods = ['POST', 'GET'])
 def root():
+  if not request.args.get('language'):
     return render_template("index.html")
+  else:
+    return render_template("indexEN.html")
 
 @app.route('/about')
 def about():
