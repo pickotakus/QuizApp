@@ -23,7 +23,7 @@ def loadAllPictures():
 @app.route('/',methods = ['POST', 'GET'])
 def root():
   if not request.args.get('language'):
-    return render_template("index.html")
+    return render_template("indexLV.html")
   else:
     return render_template("indexEN.html")
 
