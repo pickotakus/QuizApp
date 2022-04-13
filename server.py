@@ -22,20 +22,32 @@ def loadAllPictures():
 #Pirmā lapa, kas tiks ielādēta
 @app.route('/',methods = ['POST', 'GET'])
 def root():
-  if not request.args.get('language'):
+  if not request.cookies.get('language'):
+    res = make_response('Set language')
+    res.set_cookie('language', 'latvian')
     return render_template("indexLV.html")
   else:
+    res = make_response('Set language')
+    res.set_cookie('language', 'english')
     return render_template("indexEN.html")
 
 @app.route('/about')
 def about():
-  return render_template("about.html")
+  language = request.cookies.get('language')
+  if language=='latvian':
+    return render_template("aboutLV.html")
+  else:
+    return render_template("aboutEN.html")
 
 @app.route('/test',methods = ['POST', 'GET'])
 def test():
     parametri = ["IQ","Augums","Māja"]
     images = loadAllPictures()
-    return render_template("test.html",parametri=parametri,images=images)
+    language = request.cookies.get('language')
+    if language=='latvian':
+      return render_template("testLV.html",parametri=parametri,images=images)
+    else:
+      return render_template("testEN.html",parametri=parametri,images=images)
 
 #Pārbaudes lapa, lai saprastu, ka kods vispār strādā
 @app.route('/health')
