@@ -28,8 +28,8 @@ csv = new CSVLayer("https://data.gov.lv/dati/dataset/4e7e1a70-b30d-4bfd-8b07-459
     longitudeFieldName: "map".split(",")[1],
     delimiter: ";"
 });
-csv.latitudeFieldName = "Y koordināta";
-csv.longitudeFieldName = "X koordināta";
+csv.latitudeFieldName = "map".split(",")[0];
+csv.longitudeFieldName = "map".split(",")[1];
 csv.delimiter = ";";
 var orangeRed = new Color([238, 69, 0, 0.5]); // hex is #ff4500
 var marker = new SimpleMarkerSymbol("solid", 15, null, orangeRed);
