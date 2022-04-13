@@ -3,7 +3,7 @@
         <title>Quiz Aplikācija! </title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <script src="{{url_for('static',filename='script.js')}}" type="text/javascript"></script>
+        
     </head>
     <body>
         <h1>Šodien taisīsim testu!</h1>
@@ -13,5 +13,6 @@
         <h2 class="sd-section-header">Autors - Sandra Trošina.</h2>
         <button onclick="setLanguageLV();">LATVIAN</button> <br>
         <button onclick="setLanguageEN();">ENGLISH</button> <br>
+        <script src="{{url_for('static',filename='script.js')}}" type="text/javascript"></script>
     </body>
 </html>
