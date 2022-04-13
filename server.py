@@ -27,9 +27,11 @@ def root():
     res.set_cookie('language', 'latvian')
     return render_template("indexLV.html")
   else:
-    res = make_response('Set language')
-    res.set_cookie('language', 'english')
-    return render_template("indexEN.html")
+    language = request.cookies.get('language')
+    if language=='latvian':
+      return render_template("indexEN.html")
+    else:
+      return render_template("aboutEN.html")
 
 @app.route('/about')
 def about():
